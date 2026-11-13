@@ -1,0 +1,46 @@
+{
+  "name": "molt-x",
+  "version": "0.1.0",
+  "description": "Browser-to-API Crystallizer built on RightClick X: distills live CDP/HAR wire frames via chronological semantic port provenance into native context_* capabilities, locks session cookies/CSRF inside an origin-bound vault, and self-evaporates the browser.",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rossbuckley1990-hash/molt.git"
+  },
+  "type": "module",
+  "bin": {
+    "molt": "./bin/molt.ts"
+  },
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "demo": "node bin/molt.ts demo",
+    "mcp": "node bin/molt.ts mcp",
+    "test": "node --test --test-concurrency=4 --test-timeout=120000 test/*.test.ts",
+    "typecheck": "tsc -p tsconfig.json",
+    "build": "bun build bin/molt.ts --target node --outfile dist/molt.mjs && bun build src/index.ts --target node --outfile dist/index.mjs",
+    "check": "npm run typecheck && npm test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.9.0"
+  },
+  "keywords": [
+    "agents",
+    "ai",
+    "browser-automation",
+    "cdp",
+    "graphql",
+    "mcp",
+    "model-context-protocol",
+    "openapi",
+    "rightclick-x"
+  ]
+}
